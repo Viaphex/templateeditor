@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Template Editor</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>253he34rhhnvq</unique-id>
+    <saved-with-version>22600</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="List" version="1">List</plugin>
+        <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="sliderbar" version="1">Slider bar</plugin>
+    </used-plugins>
+    <used-behaviors />
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1024</width>
+        <height>768</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar only</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">NW.js</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="templateScriptBox" sid="8064323779434831">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Function" sid="4239840501526597">
+            <plugin id="Function" />
+        </object-type>
+        <object-type global="1" name="templateArray" sid="5440753362744605">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="convertTemplateScriptButton" sid="3064825076926708">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="NWjs" sid="6889415289849415">
+            <plugin id="NodeWebkit" />
+        </object-type>
+        <object-type name="renderYBar" sid="7891504830963289">
+            <plugin id="sliderbar" />
+        </object-type>
+        <object-type name="block" sid="970342854820075">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="yStore" sid="4622618711674532" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="White" pingpong="0" repeatcount="1" repeatto="0" sid="7447996701121674" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="Black" pingpong="0" repeatcount="1" repeatto="0" sid="5167725363557519" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="Red" pingpong="0" repeatcount="1" repeatto="0" sid="9458926500733638" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="Green" pingpong="0" repeatcount="1" repeatto="0" sid="6002415630761583" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="Blue" pingpong="0" repeatcount="1" repeatto="0" sid="137350548502328" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="Yellow" pingpong="0" repeatcount="1" repeatto="0" sid="624187811883864" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="blockTypesDic" sid="4752142687865148">
+            <plugin id="Dictionary" />
+        </object-type>
+        <object-type name="scanButton" sid="8897945981235428">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="blockTypeList" sid="711001540503391">
+            <plugin id="List" />
+        </object-type>
+        <object-type name="blockTypeEntryBox" sid="9967760583028484">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="setTypeButton" sid="739565563964932">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="debugBlock" sid="4869789051631908">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Template Editor.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Template Editor Event Sheet.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Function" uid="1" />
+        <global-instance type="NWjs" uid="4" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

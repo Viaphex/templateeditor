@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Template Editor Event Sheet</name>
+    <events>
+        <variable constant="1" name="RENDERPOSITIONX" sid="1232699095021287" static="0" type="number">10</variable>
+        <variable constant="1" name="RENDERPOSITIONY" sid="1935927648106326" static="0" type="number">75</variable>
+        <variable comment="X size of the template script" constant="0" name="templateScriptSizeX" sid="9472673253910161" static="0" type="number">0</variable>
+        <variable comment="Y size of the template script" constant="0" name="templateScriptSizeY" sid="4018005728088073" static="0" type="number">0</variable>
+        <variable comment="Z size of the template script" constant="0" name="templateScriptSizeZ" sid="5061458410250238" static="0" type="number">0</variable>
+        <variable comment="The total amount of data in the template" constant="0" name="templateScriptSizeAll" sid="4165396017108809" static="0" type="number">0</variable>
+        <event-group description="" sid="4694216709877821" title="Template Reading/Converting">
+            <sub-events>
+                <event-group description="" sid="2794855642759805" title="Setting Template Size">
+                    <sub-events>
+                        <variable constant="0" name="templateXSubString" sid="5136998175931957" static="0" type="text"></variable>
+                        <variable constant="0" name="templateZSubString" sid="8311029605537973" static="0" type="text"></variable>
+                        <event-block sid="5812199032786138">
+                            <conditions>
+                                <condition id="0" name="On function" sid="805841423182438" type="Function">
+                                    <param id="0" name="Name">&quot;setTemplateScriptSizeX&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="8314332806231582" type="System">
+                                    <param id="0" name="Variable">templateXSubString</param>
+                                    <param id="1" name="Value">tokenat(templateScriptBox.Text, 0, &quot;endlayer&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="2200811444656055" type="System">
+                                    <param id="0" name="Variable">templateScriptSizeX</param>
+                                    <param id="1" name="Value">tokencount( templateXSubString, newline ) - 2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5632964438569686">
+                            <conditions>
+                                <condition id="0" name="On function" sid="5590751678212356" type="Function">
+                                    <param id="0" name="Name">&quot;setTemplateScriptSizeY&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="95568246322074" type="System">
+                                    <param id="0" name="Variable">templateScriptSizeY</param>
+                                    <param id="1" name="Value">tokencount(templateScriptBox.Text, &quot;endlayer&quot;) - 1</param>
+                                </action>
+                                <action id="4" name="Set maximum" sid="9986763780872927" type="renderYBar">
+                                    <param id="0" name="Maximum">templateScriptSizeY - 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7938417674598436">
+                            <conditions>
+                                <condition id="0" name="On function" sid="855745365469848" type="Function">
+                                    <param id="0" name="Name">&quot;setTemplateScriptSizeZ&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="5079630367292889" type="System">
+                                    <param id="0" name="Variable">templateZSubString</param>
+                                    <param id="1" name="Value">tokenat(templateScriptBox.Text, 1, newline)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1444450865114527" type="System">
+                                    <param id="0" name="Variable">templateScriptSizeZ</param>
+                                    <param id="1" name="Value">tokencount(templateZSubString, &quot;,&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1627505885183137">
+                            <conditions>
+                                <condition id="0" name="On function" sid="4432537979408823" type="Function">
+                                    <param id="0" name="Name">&quot;setTemplateScriptSizeAll&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="1269726793907512" type="System">
+                                    <param id="0" name="Variable">templateScriptSizeAll</param>
+                                    <param id="1" name="Value">templateScriptSizeX * templateScriptSizeY * templateScriptSizeZ</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5286395545482256">
+                            <conditions>
+                                <condition id="0" name="On function" sid="4391679424077694" type="Function">
+                                    <param id="0" name="Name">&quot;setTemplateScriptSize&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="9411474153933066" type="Function">
+                                    <param id="0" name="Name">&quot;setTemplateScriptSizeX&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="7764525201571224" type="Function">
+                                    <param id="0" name="Name">&quot;setTemplateScriptSizeY&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="6937372340081722" type="Function">
+                                    <param id="0" name="Name">&quot;setTemplateScriptSizeZ&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="5251370703901201" type="Function">
+                                    <param id="0" name="Name">&quot;setTemplateScriptSizeAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5988037394343985">
+                            <conditions>
+                                <condition id="0" name="On function" sid="9827967902807254" type="Function">
+                                    <param id="0" name="Name">&quot;setTemplateArraySize&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set size" sid="2033814791164918" type="templateArray">
+                                    <param id="0" name="Width">templateScriptSizeX</param>
+                                    <param id="1" name="Height">templateScriptSizeY</param>
+                                    <param id="2" name="Depth">templateScriptSizeZ</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="5291737738160917" title="Converting Template Script">
+                    <sub-events>
+                        <variable comment="Readable script for converting" constant="0" name="templateScriptReadable" sid="4536057158831536" static="0" type="text"></variable>
+                        <variable constant="0" name="convertX" sid="6574873406157051" static="0" type="number">0</variable>
+                        <variable constant="0" name="convertY" sid="2421881579195521" static="0" type="number">0</variable>
+                        <variable constant="0" name="convertZ" sid="139427514855319" static="0" type="number">0</variable>
+                        <variable constant="0" name="convertNum" sid="4119104428414779" static="0" type="number">0</variable>
+                        <event-block sid="5106671589835867">
+                            <conditions>
+                                <condition id="0" name="On function" sid="9789447993358602" type="Function">
+                                    <param id="0" name="Name">&quot;convertScriptToReadable&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="3576788790896704" type="System">
+                                    <param id="0" name="Variable">templateScriptReadable</param>
+                                    <param id="1" name="Value">templateScriptBox.Text</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="60179862237739" type="System">
+                                    <param id="0" name="Variable">templateScriptReadable</param>
+                                    <param id="1" name="Value">replace( templateScriptReadable, &quot;endlayer&quot; &amp; newline &amp; newline, &quot;&quot; )</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="2809723500941616" type="System">
+                                    <param id="0" name="Variable">templateScriptReadable</param>
+                                    <param id="1" name="Value">replace( templateScriptReadable, &quot;layer&quot; &amp; newline, &quot;&quot; )</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3567876734055078" type="System">
+                                    <param id="0" name="Variable">templateScriptReadable</param>
+                                    <param id="1" name="Value">replace( templateScriptReadable, &quot;endlayer&quot;, &quot;;&quot; )</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1935618198551813" type="System">
+                                    <param id="0" name="Variable">templateScriptReadable</param>
+                                    <param id="1" name="Value">replace( templateScriptReadable, newline, &quot;,&quot; )</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9656835649283817" type="System">
+                                    <param id="0" name="Variable">templateScriptReadable</param>
+                                    <param id="1" name="Value">replace( templateScriptReadable, &quot;,;&quot;, &quot;&quot; )</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9234770561834231">
+                            <conditions>
+                                <condition id="0" name="On function" sid="8831083938218221" type="Function">
+                                    <param id="0" name="Name">&quot;convertScript&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Clear" sid="364583813444516" type="templateArray" />
+                                <action id="-9" name="Set value" sid="1296548967830765" type="System">
+                                    <param id="0" name="Variable">convertX</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3284633285222325" type="System">
+                                    <param id="0" name="Variable">convertY</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3521163901920722" type="System">
+                                    <param id="0" name="Variable">convertZ</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7872884103649766" type="System">
+                                    <param id="0" name="Variable">convertNum</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="6174270463499449">
+                                    <conditions>
+                                        <condition id="-23" name="While" sid="743413678196799" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="7684085053739467" type="System">
+                                            <param id="0" name="Variable">convertNum</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">templateScriptSizeAll</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set at XYZ" sid="2540832087948068" type="templateArray">
+                                            <param id="0" name="X">convertX</param>
+                                            <param id="1" name="Y">convertY</param>
+                                            <param id="2" name="Z">convertZ</param>
+                                            <param id="3" name="Value">tokenat( templateScriptReadable, convertNum , &quot;,&quot;)</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="6255959553792018" type="System">
+                                            <param id="0" name="Variable">convertNum</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="8226396287267104" type="System">
+                                            <param id="0" name="Variable">convertX</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="3713524573669751">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="3662712505525231" type="System">
+                                                    <param id="0" name="Variable">convertX</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">templateScriptSizeX</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="3722243231606686" type="System">
+                                                    <param id="0" name="Variable">convertX</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="1022824437761116" type="System">
+                                                    <param id="0" name="Variable">convertY</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="5903601097540824">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="3908520954888106" type="System">
+                                                    <param id="0" name="Variable">convertY</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">templateScriptSizeY</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="8117262694118112" type="System">
+                                                    <param id="0" name="Variable">convertY</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="9823583448817456" type="System">
+                                                    <param id="0" name="Variable">convertZ</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-block sid="1515895221476285">
+            <conditions>
+                <condition id="0" name="On clicked" sid="2145730941791686" type="convertTemplateScriptButton" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="5575340632800036" type="Function">
+                    <param id="0" name="Name">&quot;setTemplateScriptSize&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="7003399502085039" type="Function">
+                    <param id="0" name="Name">&quot;setTemplateArraySize&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="1650582747927944" type="Function">
+                    <param id="0" name="Name">&quot;convertScriptToReadable&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="1228226629441967" type="Function">
+                    <param id="0" name="Name">&quot;convertScript&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="8213905151377368" title="Rendering">
+            <sub-events>
+                <event-block sid="725359854306397">
+                    <conditions>
+                        <condition id="0" name="On function" sid="4015865345109355" type="Function">
+                            <param id="0" name="Name">&quot;scanTypes&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Clear" sid="3418137623645236" type="blockTypesDic" />
+                        <action id="11" name="Clear" sid="4469992775122993" type="blockTypeList" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3654994473900511">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="186813465083923" type="templateArray">
+                                    <param id="0" name="Axes">0</param>
+                                </condition>
+                                <condition id="3" inverted="1" name="Has key" sid="4753847814666546" type="blockTypesDic">
+                                    <param id="0" name="Key">str( templateArray.CurValue )</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Add key" sid="7529138993632941" type="blockTypesDic">
+                                    <param id="0" name="Key">str( templateArray.CurValue )</param>
+                                    <param id="1" name="Value">&quot;White&quot;</param>
+                                </action>
+                                <action id="7" name="Add item" sid="7493039591098019" type="blockTypeList">
+                                    <param id="0" name="Text">str( templateArray.CurValue )</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6117755246924371">
+                    <conditions>
+                        <condition id="0" name="On function" sid="7486278826727936" type="Function">
+                            <param id="0" name="Name">&quot;renderBlocks&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7351856229710755">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="3308069384092671" type="System">
+                                    <param id="0" name="Object">debugBlock</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="4339901430861831" type="debugBlock" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="8525653325906435">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="1400727474684691" type="templateArray">
+                                    <param id="0" name="Axes">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="3481292770317679" type="System">
+                                    <param id="0" name="First value">templateArray.CurY</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">renderYBar.Value</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="3035536930751108" type="System">
+                                    <param id="0" name="Object to create">debugBlock</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">RENDERPOSITIONX + ( ( templateArray.CurX ) * 16 )</param>
+                                    <param id="3" name="Y">RENDERPOSITIONY + ( ( templateArray.CurZ ) * 16 )</param>
+                                </action>
+                                <action id="0" name="Set text" sid="6828314655675426" type="debugBlock">
+                                    <param id="0" name="Text">str( templateArray.CurValue )</param>
+                                </action>
+                                <action disabled="1" id="4" name="Set animation" sid="1083051928527659" type="block">
+                                    <param id="0" name="Animation">blockTypesDic.Get(str(templateArray.CurValue))</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7831894974299698">
+                    <conditions>
+                        <condition id="2" name="On changed" sid="3606420130138093" type="renderYBar" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="4354039682467115" type="Function">
+                            <param id="0" name="Name">&quot;renderBlocks&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="9951760551669364">
+            <conditions>
+                <condition id="0" name="On clicked" sid="2664281436735527" type="scanButton" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="2364077377243521" type="Function">
+                    <param id="0" name="Name">&quot;scanTypes&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3567677379375318">
+            <conditions>
+                <condition id="1" name="On selection changed" sid="6558128173292332" type="blockTypeList" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="3958515871485169" type="blockTypeEntryBox">
+                    <param id="0" name="Text">blockTypesDic.Get(blockTypeList.SelectedText)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1645198890291708">
+            <conditions>
+                <condition id="0" name="On clicked" sid="8421878008661568" type="setTypeButton" />
+            </conditions>
+            <actions>
+                <action id="1" name="Set key" sid="8886085035674052" type="blockTypesDic">
+                    <param id="0" name="Key">blockTypeList.SelectedText</param>
+                    <param id="1" name="Value">blockTypeEntryBox.Text</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
