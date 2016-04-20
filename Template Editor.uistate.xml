@@ -10,8 +10,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">Template Editor</layout>
-        <event-sheet order="1">Template Editor Event Sheet</event-sheet>
+        <layout order="0">Template Editor</layout>
+        <event-sheet active="1" order="1">Template Editor Event Sheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -29,5 +29,16 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/block/" />
+        <folder expanded="1" path="animation-folder/block/buttons/" />
+        <folder expanded="1" path="animation-folder/block/dirt/" />
+        <folder expanded="1" path="animation-folder/block/doors/" />
+        <folder expanded="1" path="animation-folder/block/glass/" />
+        <folder expanded="1" path="animation-folder/block/liquids/" />
+        <folder expanded="1" path="animation-folder/block/nether/" />
+        <folder expanded="1" path="animation-folder/block/other/" />
+        <folder expanded="1" path="animation-folder/block/sandstone/" />
+        <folder expanded="1" path="animation-folder/block/stone/" />
+        <folder expanded="1" path="animation-folder/block/stonebrick/" />
+        <folder expanded="1" path="animation-folder/block/tripwire/" />
     </folders-expanded>
 </c2uistate>

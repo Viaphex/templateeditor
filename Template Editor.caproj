@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
     <name>Template Editor</name>
-    <description></description>
-    <version>1.0.0.0</version>
-    <author></author>
-    <author-email></author-email>
-    <author-website>http://</author-website>
+    <description>Used to edit template files supplied by ruins (minecraft mod).</description>
+    <version>1.0.0-b</version>
+    <author>Viaphex</author>
+    <author-email>viaphex@gmail.com</author-email>
+    <author-website></author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>253he34rhhnvq</unique-id>
     <saved-with-version>22600</saved-with-version>
@@ -14,11 +14,14 @@
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="List" version="1">List</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Funstorm Ltd" id="chromeconsole" version="0.100000001">Chrome Console</plugin>
         <plugin author="Scirra" id="sliderbar" version="1">Slider bar</plugin>
     </used-plugins>
     <used-behaviors />
@@ -44,7 +47,7 @@
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preload sounds">Yes</prop>
-        <prop name="Preview browser">NW.js</prop>
+        <prop name="Preview browser">Firefox</prop>
         <prop name="Sampling">Point</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
@@ -61,36 +64,166 @@
         <object-type name="convertTemplateScriptButton" sid="3064825076926708">
             <plugin id="Button" />
         </object-type>
-        <object-type name="NWjs" sid="6889415289849415">
-            <plugin id="NodeWebkit" />
-        </object-type>
-        <object-type name="renderYBar" sid="7891504830963289">
+        <object-type name="renderXBar" sid="7891504830963289">
             <plugin id="sliderbar" />
         </object-type>
         <object-type name="block" sid="970342854820075">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="yStore" sid="4622618711674532" type="number" />
+                <instance-variable name="xPos" sid="3362754202492553" type="number" />
+                <instance-variable name="yPos" sid="9587933783592361" type="number" />
+                <instance-variable name="zPos" sid="626261045359145" type="number" />
+                <instance-variable name="type" sid="9623867066267599" type="number" />
             </instance-variables>
             <animation-folder>
-                <animation framecount="1" loop="0" name="White" pingpong="0" repeatcount="1" repeatto="0" sid="7447996701121674" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                </animation>
-                <animation framecount="1" loop="0" name="Black" pingpong="0" repeatcount="1" repeatto="0" sid="5167725363557519" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                </animation>
-                <animation framecount="1" loop="0" name="Red" pingpong="0" repeatcount="1" repeatto="0" sid="9458926500733638" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                </animation>
-                <animation framecount="1" loop="0" name="Green" pingpong="0" repeatcount="1" repeatto="0" sid="6002415630761583" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                </animation>
-                <animation framecount="1" loop="0" name="Blue" pingpong="0" repeatcount="1" repeatto="0" sid="137350548502328" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                </animation>
-                <animation framecount="1" loop="0" name="Yellow" pingpong="0" repeatcount="1" repeatto="0" sid="624187811883864" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                </animation>
+                <animation-folder name="buttons">
+                    <animation framecount="1" loop="0" name="buttonstone" pingpong="0" repeatcount="1" repeatto="0" sid="9532339138526594" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\stone.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="buttonwood" pingpong="0" repeatcount="1" repeatto="0" sid="4355215401457622" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\planks_oak.png" />
+                    </animation>
+                </animation-folder>
+                <animation-folder name="dirt">
+                    <animation framecount="1" loop="0" name="dirt" pingpong="0" repeatcount="1" repeatto="0" sid="3326418878871708" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\dirt.png" />
+                    </animation>
+                </animation-folder>
+                <animation-folder name="doors">
+                    <animation framecount="1" loop="0" name="dooriron" pingpong="0" repeatcount="1" repeatto="0" sid="6275135757551054" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\door_iron_upper.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="doorwood" pingpong="0" repeatcount="1" repeatto="0" sid="4239219064663528" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\door_wood_upper.png" />
+                    </animation>
+                </animation-folder>
+                <animation-folder name="glass">
+                    <animation framecount="1" loop="0" name="glass" pingpong="0" repeatcount="1" repeatto="0" sid="3811836655927644" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\glass.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="glasswhite" pingpong="0" repeatcount="1" repeatto="0" sid="1645992913048315" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\glass_white.png" />
+                    </animation>
+                </animation-folder>
+                <animation-folder name="liquids">
+                    <animation framecount="1" loop="0" name="lava" pingpong="0" repeatcount="1" repeatto="0" sid="2076352205214264" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\lava_still.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="water" pingpong="0" repeatcount="1" repeatto="0" sid="6572125651469308" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\water_still.png" />
+                    </animation>
+                </animation-folder>
+                <animation-folder name="nether">
+                    <animation framecount="1" loop="0" name="netherbrick" pingpong="0" repeatcount="1" repeatto="0" sid="666174768864173" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\nether_brick.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="netherbrickstairs" pingpong="0" repeatcount="1" repeatto="0" sid="6714929823578753" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\nether_brick.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="netherrack" pingpong="0" repeatcount="1" repeatto="0" sid="1189007571497125" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\netherrack.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="soulsand" pingpong="0" repeatcount="1" repeatto="0" sid="776040993734635" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\soul_sand.png" />
+                    </animation>
+                </animation-folder>
+                <animation-folder name="other">
+                    <animation framecount="1" loop="0" name="air" pingpong="0" repeatcount="1" repeatto="0" sid="1204864070511867" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="bedrock" pingpong="0" repeatcount="1" repeatto="0" sid="7634307981601837" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\bedrock.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="bookshelf" pingpong="0" repeatcount="1" repeatto="0" sid="552570170710492" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\bookshelf.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="chest" pingpong="0" repeatcount="1" repeatto="0" sid="4758320243439124" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\entity\chest\trapped.png">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="1" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="dispenser" pingpong="0" repeatcount="1" repeatto="0" sid="9252766054513548" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\dispenser_front_horizontal.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="mobspawner" pingpong="0" repeatcount="1" repeatto="0" sid="2605552578529028" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\mob_spawner.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="preserveblock" pingpong="0" repeatcount="1" repeatto="0" sid="623856408491419" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="redstone" pingpong="0" repeatcount="1" repeatto="0" sid="2216950368303383" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="tnt" pingpong="0" repeatcount="1" repeatto="0" sid="4006206308952645" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\tnt_side.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="torch" pingpong="0" repeatcount="1" repeatto="0" sid="7637859089095646" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\torch_on.png">
+                            <collision-poly>
+                                <point x="0.4375" y="0.4375" />
+                                <point x="0.5" y="0.375" />
+                                <point x="0.5625" y="0.4375" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.5" y="1" />
+                                <point x="0.4375" y="0.5625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+                <animation-folder name="sandstone">
+                    <animation framecount="1" loop="0" name="sandstone" pingpong="0" repeatcount="1" repeatto="0" sid="9206448640756332" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\sandstone_normal.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="sandstonechiseled" pingpong="0" repeatcount="1" repeatto="0" sid="627168925866675" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="sandstonesmooth" pingpong="0" repeatcount="1" repeatto="0" sid="2460618384491715" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\sandstone_smooth.png" />
+                    </animation>
+                </animation-folder>
+                <animation-folder name="stone">
+                    <animation framecount="1" loop="0" name="cobblestone" pingpong="0" repeatcount="1" repeatto="0" sid="5460863667253605" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\cobblestone.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="stone" pingpong="0" repeatcount="1" repeatto="0" sid="5449150613764788" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\stone.png" />
+                    </animation>
+                </animation-folder>
+                <animation-folder name="stonebrick">
+                    <animation framecount="1" loop="0" name="stonebrick" pingpong="0" repeatcount="1" repeatto="0" sid="6297908507217222" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\stonebrick.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="stonebrickstairs" pingpong="0" repeatcount="1" repeatto="0" sid="404689816186037" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\stonebrick.png" />
+                    </animation>
+                </animation-folder>
+                <animation-folder name="tripwire">
+                    <animation framecount="1" loop="0" name="tripwire" pingpong="0" repeatcount="1" repeatto="0" sid="2376685954252587" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="tripwirehook" pingpong="0" repeatcount="1" repeatto="0" sid="7135303067709941" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Viaphex\Documents\Construct Programs\Template Editor\blocks\trip_wire_source.png">
+                            <collision-poly>
+                                <point x="0.3125" y="0.3125" />
+                                <point x="0.5" y="0.1875" />
+                                <point x="0.6875" y="0.3125" />
+                                <point x="0.6875" y="0.5" />
+                                <point x="0.5625" y="0.5625" />
+                                <point x="0.5" y="1" />
+                                <point x="0.4375" y="0.5625" />
+                                <point x="0.3125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
             </animation-folder>
         </object-type>
         <object-type global="1" name="blockTypesDic" sid="4752142687865148">
@@ -102,14 +235,56 @@
         <object-type name="blockTypeList" sid="711001540503391">
             <plugin id="List" />
         </object-type>
-        <object-type name="blockTypeEntryBox" sid="9967760583028484">
-            <plugin id="TextBox" />
-        </object-type>
-        <object-type name="setTypeButton" sid="739565563964932">
+        <object-type name="setTextureButton" sid="739565563964932">
             <plugin id="Button" />
         </object-type>
-        <object-type name="debugBlock" sid="4869789051631908">
+        <object-type name="ChromeConsole" sid="5663767709959518">
+            <plugin id="chromeconsole" />
+        </object-type>
+        <object-type name="exportedTemplateArrayBox" sid="50869843225782">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="exportTemplateArrayButton" sid="8141107454695109">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="zoomBar" sid="116275845761949">
+            <plugin id="sliderbar" />
+        </object-type>
+        <object-type name="Mouse" sid="8312924110668288">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="renderBlocksBelowCheck" sid="6382808329978096">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="levelBarText" sid="9443673816026992">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="zoomBarText" sid="6792138805350708">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="blockIdentifyText" sid="2210857794495606">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Keyboard" sid="5675026691294714">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="blockTextureChooseList" sid="9422395086386455">
+            <plugin id="List" />
+        </object-type>
+        <object-type name="quickTextureScript" sid="8391297819687227">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="quickTextureButton" sid="9981886687928097">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="NWjs" sid="493990234326013">
+            <plugin id="NodeWebkit" />
+        </object-type>
+        <object-type name="copyToClipboardButton" sid="925157133339794">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="newTypeButton" sid="3781774063580912">
+            <plugin id="Button" />
         </object-type>
     </object-folder>
     <families />
@@ -121,7 +296,10 @@
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="1" />
-        <global-instance type="NWjs" uid="4" />
+        <global-instance type="ChromeConsole" uid="13" />
+        <global-instance type="Mouse" uid="15" />
+        <global-instance type="Keyboard" uid="20" />
+        <global-instance type="NWjs" uid="23" />
     </global-instances>
     <sounds-folder />
     <music-folder />
